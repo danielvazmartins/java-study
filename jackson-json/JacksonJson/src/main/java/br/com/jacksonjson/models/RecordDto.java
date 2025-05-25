@@ -3,13 +3,15 @@ package br.com.jacksonjson.models;
 import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonIncludeProperties({"eventVersion","eventSource"})
+@JsonIncludeProperties({"eventVersion","eventSource","s3"})
 public class RecordDto {
     @JsonProperty("eventVersion")
     public String version;
 
     @JsonProperty("eventSource")
     public String source;
+
+    public S3Dto s3;
 
     public String getVersion() {
         return version;
@@ -30,6 +32,6 @@ public class RecordDto {
 
     @Override()
     public String toString() {
-        return "{\"version\":\"" + version + "\",\"source\":\"" + source + "}";
+        return "{\"version\":\"" + version + "\",\"source\":\"" + source + "\",\"s3\":\"" + s3 + "\"}";
     }
 }

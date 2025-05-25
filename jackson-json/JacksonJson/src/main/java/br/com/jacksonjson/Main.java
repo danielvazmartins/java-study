@@ -16,10 +16,10 @@ public class Main {
         System.out.println(jsonNode);
 
         EventDto event = jsonService.loadJsonToModel();
-        System.out.println(event.getRecords().get(0).getVersion());
-        System.out.println(event.getRecords().get(0).getSource());
+        System.out.println("Event Version: " + event.getRecords().get(0).getVersion());
+        System.out.println("Event Source: " + event.getRecords().get(0).getSource());
 
-        System.out.println(event.toString());
         jsonService.printJson(event);
+        System.out.println("To String: " +event.toString());
     }
 }
